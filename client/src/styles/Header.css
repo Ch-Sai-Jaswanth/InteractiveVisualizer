@@ -1,0 +1,67 @@
+.header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  background-image: linear-gradient(to right, #1565C0, #42A5F5, #64B5F6);
+  color: #FFFFFF;
+  width: 100%;
+  height: 80px;
+  position: fixed;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.header-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+  margin-left: 35%;
+  color:white;
+  background-clip: text;
+  -webkit-background-clip: text;
+}
+
+.header-login {
+  display: flex;
+  align-items: center;
+}
+
+.login-button,
+.logout-button {
+  background-color: #4CAF50;
+  color: #FFFFFF;
+  border: none;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-left: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover,
+.logout-button:hover {
+  background-color: #2E7D32;
+}
+
+.logout-button {
+  background-color: #E53935;
+}
+
+.logout-button:hover {
+  background-color: #C62828;
+}
+
+.logged-in-user {
+  display: flex;
+  align-items: center;
+}
+
+.logged-in-user span {
+  margin-right: 2rem;
+  font-family: Sans-serif;
+  font-weight: bold;
+}

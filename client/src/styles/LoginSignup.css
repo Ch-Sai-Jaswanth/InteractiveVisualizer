@@ -1,0 +1,85 @@
+*,
+::before,
+::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+label {
+    font-size: 20px;
+    font-weight: 600;
+    color: #333;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    font: Roboto, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background-color: #fff;
+    padding: 32px 48px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 9px 8px 24px 0px rgba(66, 68, 90, 1);
+}
+
+.container h1 {
+    margin-bottom: 20px;
+}
+
+.container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.container form div label {
+    margin-right: 16px;
+    width: 100%;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.container form input {
+    width: 100%;
+    font-size: 16px;
+    padding: 10px;
+    border: none;
+    outline: none;
+    padding: 12px 24px;
+    border-radius: 4px;
+    cursor:pointer;
+    border-bottom: 1px solid black;
+}
+
+.container input::placeholder {
+    font-size: 12px;
+    font-style: italic;
+    color: #999;
+}
+
+form button {
+    background-color: #007bff;
+    border: none;
+    font-size: 20px;
+    color: white;
+    padding: 10px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
