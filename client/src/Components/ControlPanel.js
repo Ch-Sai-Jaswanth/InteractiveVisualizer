@@ -144,6 +144,8 @@ const ControlPanel = ({
           <option value="mergeSort">Merge Sort</option>
           <option value="insertionSort">Insertion Sort</option>
           <option value="selectionSort">Selection Sort</option>
+          <option value="heapSort">Heap Sort</option>
+          <option value="radixSort">Radix Sort</option>
         </select>
       </div>
       <div className="input-group">
@@ -176,6 +178,8 @@ const ControlPanel = ({
           <option value="mergeSort">Merge Sort</option>
           <option value="insertionSort">Insertion Sort</option>
           <option value="selectionSort">Selection Sort</option>
+          <option value="heapSort">Heap Sort</option>
+          <option value="radixSort">Radix Sort</option>
         </select>
       </div>
       <div className="input-group">
@@ -190,6 +194,8 @@ const ControlPanel = ({
           <option value="mergeSort">Merge Sort</option>
           <option value="insertionSort">Insertion Sort</option>
           <option value="selectionSort">Selection Sort</option>
+          <option value="heapSort">Heap Sort</option>
+          <option value="radixSort">Radix Sort</option>
         </select>
       </div>
       <div className="input-group">

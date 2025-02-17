@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import BarGraph from './BarGraph';
 import ControlPanel from './ControlPanel';
-import { bubbleSort, quickSort, mergeSort, insertionSort, selectionSort } from '../utils/SortingAlgortihms';
+import { bubbleSort, quickSort, mergeSort, insertionSort, selectionSort, heapSort, radixSort } from '../utils/SortingAlgortihms';
 import '../styles/SortingVisualizer.css';
 
 const SortingVisualizer = () => {
@@ -28,6 +28,12 @@ const SortingVisualizer = () => {
   case 'selectionSort':
     await selectionSort(array, setArray, sortingSpeed, () => setIsSorting(false));
     break;
+    case 'heapSort':
+      await heapSort(array, setArray, sortingSpeed, () => setIsSorting(false));
+      break;
+    case 'radixSort':
+      await radixSort(array, setArray, sortingSpeed, () => setIsSorting(false));
+      break;
   default:
     break;
     }

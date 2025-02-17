@@ -99,6 +99,44 @@ const BarGraph = ({ array, sortingAlgorithm }) => {
             <p>- O(1)</p>
           </div>
         );
+      case 'heapSort':
+        return (
+          <div className="algorithm-info">
+            <h2>Heap Sort</h2>
+            <p>
+              Heap Sort is a comparison-based sorting algorithm that works by building binary heap from the input array, and then repeatedly extracting the maximum element from the heap and placing it at the end of the sorted array.
+            </p>
+            <h5>Time Complexity:</h5>
+            <p>
+              - Worst case: O(n log n)
+              <br />
+              - Average case: O(n log n)
+              <br />
+              - Best case: O(n log n)
+            </p>
+            <h5>Space Complexity:</h5>
+            <p>- O(1)</p>
+          </div>
+        );
+      case 'radixSort':
+        return (
+          <div className="algorithm-info">
+            <h2>Radix Sort</h2>
+            <p>
+              Radix Sort is a non-comparison-based that sorts the elements by processing the individual digits of each element. It works by first sorting the elements based on the least significant digit, and so on.
+            </p>
+            <h5>Time Complexity:</h5>
+            <p>
+              - Worst case: O(kn), k is number of digits in maximum element
+              <br />
+              - Average case: O(kn)
+              <br />
+              - Best case: O(kn)
+            </p>
+            <h5>Space Complexity:</h5>
+            <p>- O(n + k)</p>
+          </div>
+        );
       default:
         return null;
     }
@@ -134,7 +172,6 @@ const BarGraph = ({ array, sortingAlgorithm }) => {
     </span>
   </div>
 ))}
-
 
     </div>
   );
