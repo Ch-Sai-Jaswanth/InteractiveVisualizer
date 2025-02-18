@@ -10,6 +10,7 @@ const SortingVisualizer = () => {
   const [sortingSpeed, setSortingSpeed] = useState(100);
   const [isSorting, setIsSorting] = useState(false);
   const [sortOrder, setSortOrder] = useState('ascending');
+  const [comparingIndices, setComparingIndices] = useState([]);
 
   const handleSorting = async () => {
     setIsSorting(true);
@@ -17,25 +18,25 @@ const SortingVisualizer = () => {
 
     switch (sortingAlgorithm) {
       case 'bubbleSort':
-        await bubbleSort(array, setArray, sortingSpeed, sortOrder, onComplete);
+        await bubbleSort(array, setArray, sortingSpeed, sortOrder, setComparingIndices, onComplete);
         break;
       case 'quickSort':
-        await quickSort(array, 0, array.length - 1, setArray, sortingSpeed, sortOrder, onComplete);
+        await quickSort(array, 0, array.length - 1, setArray, sortingSpeed, sortOrder, setComparingIndices, onComplete);
         break;
       case 'mergeSort':
-        await mergeSort(array, setArray, sortingSpeed, sortOrder, onComplete);
+        await mergeSort(array, setArray, sortingSpeed, sortOrder, setComparingIndices, onComplete);
         break;
       case 'insertionSort':
-        await insertionSort(array, setArray, sortingSpeed, sortOrder, onComplete);
+        await insertionSort(array, setArray, sortingSpeed, sortOrder, setComparingIndices, onComplete);
         break;
       case 'selectionSort':
-        await selectionSort(array, setArray, sortingSpeed, sortOrder, onComplete);
+        await selectionSort(array, setArray, sortingSpeed, sortOrder, setComparingIndices, onComplete);
         break;
       case 'heapSort':
-        await heapSort(array, setArray, sortingSpeed, sortOrder, onComplete);
+        await heapSort(array, setArray, sortingSpeed, sortOrder, setComparingIndices, onComplete);
         break;
       case 'radixSort':
-        await radixSort(array, setArray, sortingSpeed, sortOrder, onComplete);
+        await radixSort(array, setArray, sortingSpeed, sortOrder, setComparingIndices, onComplete);
         break;
       default:
         setIsSorting(false);
@@ -53,7 +54,7 @@ const SortingVisualizer = () => {
 
   return (
     <div className="sorting-visualizer">
-      <BarGraph array={array} sortingAlgorithm={sortingAlgorithm} sortOrder={sortOrder} />
+      <BarGraph array={array} sortingAlgorithm={sortingAlgorithm} sortOrder={sortOrder} comparingIndices={comparingIndices} />
       <ControlPanel
         array={array}
         setArray={setArray}
@@ -65,6 +66,7 @@ const SortingVisualizer = () => {
         handleSpeedChange={handleSpeedChange}
         sortOrder={sortOrder}
         setSortOrder={setSortOrder}
+        username="user1"
       />
     </div>
   );

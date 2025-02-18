@@ -2,7 +2,7 @@ import React from 'react';
 import '../styles/BarGraph.css';
 import { FaPaperclip } from 'react-icons/fa';
 
-const BarGraph = ({ array, sortingAlgorithm, sortOrder }) => {
+const BarGraph = ({ array, sortingAlgorithm, sortOrder, comparingIndices }) => {
   const getAlgorithmInfo = (algorithm) => {
     switch (algorithm) {
       case 'bubbleSort':
@@ -151,7 +151,7 @@ const BarGraph = ({ array, sortingAlgorithm, sortOrder }) => {
       {array.map((value, index) => (
         <div
           key={index}
-          className="bar"
+          className={`bar ${comparingIndices.includes(index) ? 'comparing' : ''}`}
           style={{
             height: `${(value / Math.max(...array)) * 100}%`,
             width: `${100 / array.length}%`,

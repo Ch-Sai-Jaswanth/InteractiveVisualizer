@@ -1,8 +1,8 @@
-  .bar-graph {
+.bar-graph {
   display: flex;
   height: 400px;
   margin-bottom: 40px;
-  background: linear-gradient(145deg, #e4e4e4, #ffffff);;
+  background: linear-gradient(145deg, #e4e4e4, #ffffff);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   position: relative;
 }
@@ -50,7 +50,11 @@
   transition: height 0.5s ease;
 }
 
-h2 a{
+.bar.comparing {
+  background-color: #d74016;
+}
+
+h2 a {
   color: white;
   text-decoration: none;
 }
