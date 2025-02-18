@@ -114,3 +114,16 @@ button:disabled {
 .comparison-result h3 {
   margin: 10px 0;
 }
+
+.toggle-button {
+  padding: 8px 12px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.toggle-button {
+  background-color: #007bff;
+  color: #fff;
+}

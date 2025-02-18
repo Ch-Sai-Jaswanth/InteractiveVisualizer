@@ -10,6 +10,8 @@ const ControlPanel = ({
   handleAlgorithmChange,
   sortingSpeed,
   handleSpeedChange,
+  sortOrder,
+  setSortOrder,
   username,
 }) => {
   const [arrayInput, setArrayInput] = useState('');
@@ -61,16 +63,20 @@ const ControlPanel = ({
     }
   };
 
+  const toggleSortOrder = () => {
+    setSortOrder(sortOrder === 'ascending' ? 'descending' : 'ascending');
+  };
+
   const compareAlgorithms = (algorithm1, algorithm2) => {
     const array1 = [...array];
     const array2 = [...array];
   
     const startTime1 = performance.now();
-    handleSorting(array1, algorithm1);
+    handleSorting(array1, algorithm1, sortOrder);
     const endTime1 = performance.now();
   
     const startTime2 = performance.now();
-    handleSorting(array2, algorithm2);
+    handleSorting(array2, algorithm2, sortOrder);
     const endTime2 = performance.now();
   
     const time1 = endTime1 - startTime1;
@@ -160,6 +166,26 @@ const ControlPanel = ({
           onChange={(e) => handleSpeedChange(e.target.value)}
         />
         <span>{sortingSpeed} ms</span>
+      </div>
+      {/* <div className="input-group">
+        <label htmlFor="sorting-order">Sorting Order:</label>
+        <select
+          id="sorting-order"
+          value={sortOrder}
+          onChange={(e) => setSortOrder(e.target.value)}
+        >
+          <option value="ascending">Ascending</option>
+          <option value="descending">Descending</option>
+        </select>
+      </div> */}
+      <div className="input-group">
+        <label htmlFor="sorting-order">Sorting Order:</label>
+        <button
+          className={`toggle-button ${sortOrder === 'ascending' ? 'active' : ''}`}
+          onClick={toggleSortOrder}
+        >
+          {sortOrder === 'ascending' ? 'Ascending' : 'Descending'}
+        </button>
       </div>
       <div className="input-group">
         <button onClick={handleSorting} disabled={isSorting}>
