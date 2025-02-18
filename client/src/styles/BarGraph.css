@@ -49,3 +49,8 @@
   border-radius: 4px 4px 0 0;
   transition: height 0.5s ease;
 }
+
+h2 a{
+  color: white;
+  text-decoration: none;
+}

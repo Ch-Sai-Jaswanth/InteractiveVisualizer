@@ -1,5 +1,6 @@
 import React from 'react';
 import '../styles/BarGraph.css';
+import { FaPaperclip } from 'react-icons/fa';
 
 const BarGraph = ({ array, sortingAlgorithm }) => {
   const getAlgorithmInfo = (algorithm) => {
@@ -7,7 +8,7 @@ const BarGraph = ({ array, sortingAlgorithm }) => {
       case 'bubbleSort':
       return (
         <div className="algorithm-info">
-          <h2>Bubble Sort</h2>
+          <h2><a href='https://www.geeksforgeeks.org/bubble-sort-algorithm/' target='blank'>Bubble Sort <FaPaperclip size={12}/></a></h2>
           <p>
             Bubble Sort, sometimes referred to as sinking sort is a simple sorting algorithm that repeatedly steps through the list, compares adjacent elements and swaps them if they are in the wrong order.
           </p>
@@ -26,7 +27,7 @@ const BarGraph = ({ array, sortingAlgorithm }) => {
     case 'quickSort':
       return (
         <div className="algorithm-info">
-          <h2>Quick Sort</h2>
+          <h2><a href='https://www.geeksforgeeks.org/quick-sort-algorithm/' target='blank'>Quick Sort <FaPaperclip size={12}/></a></h2>
           <p>
             Quick Sort is a divide-and-conquer algorithm that works by selecting a 'pivot' element, and partitioning other elements into two sub-arrays, according to whether they are less than or greater than the pivot.
           </p>
@@ -45,7 +46,7 @@ const BarGraph = ({ array, sortingAlgorithm }) => {
     case 'mergeSort':
       return (
         <div className="algorithm-info">
-          <h2>Merge Sort</h2>
+          <h2><a href='https://www.geeksforgeeks.org/merge-sort/' target='blank'>Merge Sort <FaPaperclip size={12}/></a></h2>
           <p>
             Merge Sort is a divide-and-conquer algorithm that works by dividing the input array into two halves, calling itself for the two halves, and then merging the two sorted halves.
           </p>
@@ -64,7 +65,7 @@ const BarGraph = ({ array, sortingAlgorithm }) => {
     case 'insertionSort':
       return (
         <div className="algorithm-info">
-          <h2>Insertion Sort</h2>
+          <h2><a href='https://www.geeksforgeeks.org/insertion-sort-algorithm/' target='blank'>Insertion Sort <FaPaperclip size={12}/></a></h2>
           <p>
             Insertion Sort is a simple sorting algorithm that works by iterating through an array, removing one element at a time and finding the appropriate place to insert it into the sorted portion of the array.
           </p>
@@ -83,7 +84,7 @@ const BarGraph = ({ array, sortingAlgorithm }) => {
       case 'selectionSort':
         return (
           <div className="algorithm-info">
-            <h2>Selection Sort</h2>
+            <h2><a href='https://www.geeksforgeeks.org/selection-sort-algorithm-2/' target='blank'>Selection Sort <FaPaperclip size={12}/></a></h2>
             <p>
               Selection Sort is a simple sorting algorithm that works by repeatedly finding the minimum element from the unsorted part of the array and swapping it with the first element of the unsorted part.
             </p>
@@ -102,7 +103,7 @@ const BarGraph = ({ array, sortingAlgorithm }) => {
       case 'heapSort':
         return (
           <div className="algorithm-info">
-            <h2>Heap Sort</h2>
+            <h2><a href='https://www.geeksforgeeks.org/heap-sort/' target='blank'>Heap Sort <FaPaperclip size={12}/></a></h2>
             <p>
               Heap Sort is a comparison-based sorting algorithm that works by building binary heap from the input array, and then repeatedly extracting the maximum element from the heap and placing it at the end of the sorted array.
             </p>
@@ -121,7 +122,7 @@ const BarGraph = ({ array, sortingAlgorithm }) => {
       case 'radixSort':
         return (
           <div className="algorithm-info">
-            <h2>Radix Sort</h2>
+            <h2><a href='https://www.geeksforgeeks.org/radix-sort/' target='blank'>Radix Sort <FaPaperclip size={12}/></a></h2>
             <p>
               Radix Sort is a non-comparison-based that sorts the elements by processing the individual digits of each element. It works by first sorting the elements based on the least significant digit, and so on.
             </p>
@@ -167,12 +168,11 @@ const BarGraph = ({ array, sortingAlgorithm }) => {
             fontSize: `${60 / Math.sqrt(array.length)}px`,
             fontWeight: 'bold',
           }}
-    >
-      {value}
-    </span>
-  </div>
-))}
-
+        >
+          {value}
+        </span>
+      </div>
+    ))}
     </div>
   );
 };
