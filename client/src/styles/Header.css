@@ -13,11 +13,18 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
+.header-logo-container img {
+  width: 100px;
+  height: 70px;
+  margin-left: 10%;
+  border: 1px solid white;
+}
+
 .header-title {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: bold;
   text-align: center;
-  margin-left: 35%;
+  margin-left: 10%;
   color:white;
   background-clip: text;
   -webkit-background-clip: text;

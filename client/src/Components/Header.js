@@ -15,6 +15,9 @@ const Header = ({ loggedInUser, handleLogout }) => {
 
   return (
     <div className="header-container">
+      <div className='header-logo-container'>
+        <img src='.././logo.png' alt="logo" className="header-logo" />
+      </div>
       <div className="header-title">SORTIFY - Interactive Sorting Visualizer</div>
       <div className="header-login">
         {loggedInUser && (
