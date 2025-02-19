@@ -67,6 +67,23 @@ const ControlPanel = ({
     setSortOrder(sortOrder === 'ascending' ? 'descending' : 'ascending');
   };
 
+  const handleFileUpload = (event) => {
+    const file = event.target.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const content = e.target.result;
+        const inputArray = content.split(',').map(Number);
+        setArray(inputArray);
+        setArraySize(inputArray.length);
+
+        setUserArrays([...userArrays, inputArray]);
+        localStorage.setItem(`${username}_arrays`, JSON.stringify([...userArrays, inputArray]));
+      };
+      reader.readAsText(file);
+    }
+  };
+
   const compareAlgorithms = (algorithm1, algorithm2) => {
     const array1 = [...array];
     const array2 = [...array];
@@ -105,6 +122,15 @@ const ControlPanel = ({
           onChange={(e) => handleArrayInput(e.target.value)}
         />
         <button onClick={handleSubmit}>Submit</button>
+      </div>
+      <div className="input-group">
+        <label htmlFor="file-upload">Upload Array File:</label>
+        <input
+          type="file"
+          id="file-upload"
+          accept=".txt"
+          onChange={handleFileUpload}
+        />
       </div>
       <div className="input-group">
         <label htmlFor="array-size">Array Size:</label>
@@ -167,17 +193,6 @@ const ControlPanel = ({
         />
         <span>{sortingSpeed} ms</span>
       </div>
-      {/* <div className="input-group">
-        <label htmlFor="sorting-order">Sorting Order:</label>
-        <select
-          id="sorting-order"
-          value={sortOrder}
-          onChange={(e) => setSortOrder(e.target.value)}
-        >
-          <option value="ascending">Ascending</option>
-          <option value="descending">Descending</option>
-        </select>
-      </div> */}
       <div className="input-group">
         <label htmlFor="sorting-order">Sorting Order:</label>
         <button
@@ -186,8 +201,7 @@ const ControlPanel = ({
         >
           {sortOrder === 'ascending' ? 'Ascending' : 'Descending'}
         </button>
-      </div>
-      <div className="input-group">
+        &nbsp;
         <button onClick={handleSorting} disabled={isSorting}>
           {isSorting ? 'Sorting...' : 'Start Sorting'}
         </button>
@@ -223,6 +237,9 @@ const ControlPanel = ({
           <option value="heapSort">Heap Sort</option>
           <option value="radixSort">Radix Sort</option>
         </select>
+      </div>
+      <div className="input-group">
+        
       </div>
       <div className="input-group">
         <button className="compare-button" onClick={() => compareAlgorithms(selectedAlgorithm1, selectedAlgorithm2)}>
