@@ -99,7 +99,10 @@ const ControlPanel = ({
     const time1 = endTime1 - startTime1;
     const time2 = endTime2 - startTime2;
     let result;
-    if (time1 < time2) {
+    if(algorithm1 === algorithm2) {
+      result = "Both algorithms are same, choose different algorithms to compare";
+    }
+    else if (time1 < time2) {
       result = `${algorithm1} is faster than ${algorithm2} for the given array`;
     } else if (time1 > time2) {
       result = `${algorithm2} is faster than ${algorithm1} for the given array`;
